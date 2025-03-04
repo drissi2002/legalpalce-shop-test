@@ -34,11 +34,7 @@ The goal of this test is to assess your React skills, including state management
 5. Write unit tests and ensure they pass.
 6. Provide a summary of your changes and any relevant information in the `SUMMARY.md` file.
 
-## Evaluation Criteria
-- Code quality and readability.
-- Proper use of React hooks and state management.
-- Completeness and accuracy of the required features.
-- Testing coverage and quality of test cases.
-- Code refactoring and best practices.
+
+PS: Please commit as frequently as possible to make the review easier. We expect you to spend no more than 2 hours on this assignment. We value the quality of the end result, not how much time you have spent on it.
 
 Good luck!
