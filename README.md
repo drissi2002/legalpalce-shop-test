@@ -20,18 +20,18 @@ The goal of this test is to assess your React skills, including state management
    - Cover critical functionality such as login, item addition, cart management, and price calculation.
 
 ## Instructions
-1. Clone the repository.
-2. Install dependencies:
+1. Fork the repository.
+2. Clone the fork.
+3. Install dependencies:
    ```bash
    pnpm install
    ```
-3. Start the development server:
+4. Start the development server:
    ```bash
    pnpm run dev
    ```
-4. Implement the required features and refactor the code.
-5. Write unit tests and ensure they pass.
-6. Provide a summary of your changes and any relevant information in the `SUMMARY.md` file.
+5. Implement the required features and refactor the code.
+6. Write unit tests and ensure they pass.
 
 
 PS: Please commit as frequently as possible to make the review easier. We expect you to spend no more than 2 hours on this assignment. We value the quality of the end result, not how much time you have spent on it.
