@@ -15,6 +15,7 @@ type ItemType = {
   price: string;
 };
 
+// ? Feel free to add more items to the mock data
 const mockItemsData: ItemType[] = [
   {
     name: "Yaourt",

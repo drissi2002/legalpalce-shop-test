@@ -23,11 +23,11 @@ The goal of this test is to assess your React skills, including state management
 1. Clone the repository.
 2. Install dependencies:
    ```bash
-   npm install
+   pnpm install
    ```
 3. Start the development server:
    ```bash
-   npm run dev
+   pnpm run dev
    ```
 4. Implement the required features and refactor the code.
 5. Write unit tests and ensure they pass.
