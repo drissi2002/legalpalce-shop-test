@@ -17,7 +17,6 @@ The goal of this test is to assess your React skills, including state management
    - Ensure the code is clean, modular, and maintainable.
 
 3. **Add Unit Tests:**
-   - Use a testing framework of your choice (e.g., Jest, React Testing Library, or Cypress).
    - Cover critical functionality such as login, item addition, cart management, and price calculation.
 
 ## Instructions
