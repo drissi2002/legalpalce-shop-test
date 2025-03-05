@@ -23,9 +23,9 @@ const Cart = ({ cart, removeFromCart, calculateTotal }: { cart: CartItemType[], 
             </CardFooter>
           </Card>
         ))}
-        <div className="mt-4">
-          <strong>Total: ${calculateTotal()}</strong>
-        </div>
+         <Card className="mt-4 p-4 bg-white border-t border-gray-200 flex justify-end items-center rounded-md ml-auto">
+          <strong className="text-sm">Total: ${calculateTotal()}</strong>
+        </Card>
       </div>
     )}
   </div>
