@@ -1,4 +1,4 @@
-# Shop Test App
+# legalpalce-shop-test
 
 ## Objective
 The goal of this test is to assess your React skills, including state management, component architecture, TypeScript, and unit testing. You are expected to complete the functionality, refactor the code, and add appropriate unit tests.
