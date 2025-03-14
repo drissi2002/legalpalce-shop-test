@@ -1,11 +1,16 @@
+import React from "react";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-const Login = ({ onLogin }: { onLogin: () => void }) => (
+interface LoginProps {
+  onLogin: () => void;
+}
+
+const Login: React.FC<LoginProps> = ({ onLogin }) => (
   <Card className="w-1/3">
-    <CardHeader className="text-lg font-bold" >Login</CardHeader>
+    <CardHeader className="text-lg font-bold">Login</CardHeader>
     <CardContent>
-      <div className="text-lg text-gray-600 italic"> Please log in to access the shop.</div>
+      <div className="text-lg text-gray-600 italic">Please log in to access the shop.</div>
     </CardContent>
     <CardFooter>
       <Button onClick={onLogin} className="w-full">
