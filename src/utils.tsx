@@ -33,7 +33,10 @@ export const mockFetchData = (): Promise<{ itemsData: ItemType[] }> =>
     )
   );
 
-export const addToCart = (prevCart: CartItemType[], item: ItemType): CartItemType[] => {
+export const addToCart = (
+  prevCart: CartItemType[],
+  item: ItemType
+): CartItemType[] => {
   const existingItem = prevCart.find((cartItem) => cartItem.sku === item.sku);
   if (existingItem) {
     return prevCart.map((cartItem) =>
@@ -46,7 +49,10 @@ export const addToCart = (prevCart: CartItemType[], item: ItemType): CartItemTyp
   }
 };
 
-export const removeFromCart = (prevCart: CartItemType[], sku: string): CartItemType[] => {
+export const removeFromCart = (
+  prevCart: CartItemType[],
+  sku: string
+): CartItemType[] => {
   const existingItem = prevCart.find((cartItem) => cartItem.sku === sku);
   if (existingItem && existingItem.quantity > 1) {
     return prevCart.map((cartItem) =>
@@ -60,5 +66,7 @@ export const removeFromCart = (prevCart: CartItemType[], sku: string): CartItemT
 };
 
 export const calculateTotal = (cart: CartItemType[]): string => {
-  return cart.reduce((total, item) => total + parseFloat(item.price) * item.quantity, 0).toFixed(2);
+  return cart
+    .reduce((total, item) => total + parseFloat(item.price) * item.quantity, 0)
+    .toFixed(2);
 };
