@@ -1,41 +1,17 @@
-import { useState, useEffect, useCallback } from "react";
-import Shop from "@/components/shop/Shop";
-import Cart from "@/components/shop/Cart";
-import Login from "@/components/auth/Login";
-import { ItemType } from "@/types/item-type";
-import { CartItemType } from "./types/cart-item-type";
-import { mockFetchData, addToCart as addToCartUtil, removeFromCart as removeFromCartUtil, calculateTotal as calculateTotalUtil } from "@/utils";
+import Login from "./components/auth/Login";
+import Shop from "./components/shop/Shop";
+import Cart from "./components/shop/Cart";
+import useLogin from "./hooks/use-login";
+import useShop from "./hooks/use-shop";
+import useCart from "./hooks/use-cart";
 
 
 // ? Feel free to add more items to the mock data
 
 const App = () => {
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [items, setItems] = useState<ItemType[]>([]);
-  const [cart, setCart] = useState<CartItemType[]>([]);
-
-  useEffect(() => {
-    if (loggedIn) {
-      mockFetchData().then((data) => {
-        setItems(data.itemsData);
-      });
-    }
-  }, [loggedIn]);
-
-  const handleLogin = () => setLoggedIn(true);
-
-  const addToCart = useCallback((item: ItemType) => {
-    setCart((prevCart) => addToCartUtil(prevCart, item));
-  }, []);
-
-  const removeFromCart = useCallback((sku: string) => {
-    setCart((prevCart) => removeFromCartUtil(prevCart, sku));
-  }, []);
-
-  const calculateTotal = useCallback(() => {
-    return calculateTotalUtil(cart);
-  }, [cart]);
-
+  const { loggedIn, handleLogin } = useLogin();
+  const { items ,loading} = useShop();
+  const { cart, addToCart, removeFromCart, calculateTotal } = useCart();
 
   return (
     <div className="min-w-screen p-12 w-full h-screen gap-2 flex flex-col items-center justify-center">
@@ -45,7 +21,7 @@ const App = () => {
           <Login onLogin={handleLogin} />
         ) : (
           <>
-            <Shop items={items} addToCart={addToCart} />
+            <Shop items={items} addToCart={addToCart} loading={loading} />
             <Cart cart={cart} removeFromCart={removeFromCart} calculateTotal={calculateTotal} />
           </>
         )}
