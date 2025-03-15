@@ -70,8 +70,8 @@ it("should calculate the total price correctly", async () => {
   fireEvent.click(screen.getByRole("button", { name: /login/i }));
 
   // Wait for items to be fetched and displayed
-  await waitFor(() => expect(screen.getByText("natural yogurt")).toBeInTheDocument(), { timeout: 2000 });
-  await waitFor(() => expect(screen.getByText("fresh buttermilk")).toBeInTheDocument(), { timeout: 2000 });
+  await waitFor(() => expect(screen.getByText("Fermented Products")).toBeInTheDocument(), { timeout: 2000 });
+  await waitFor(() => expect(screen.getByText("Soft Cheese")).toBeInTheDocument(), { timeout: 2000 });
 
   // Add items to cart
   fireEvent.click(screen.getAllByRole("button", { name: /Add to Cart/i })[0]);
@@ -79,10 +79,10 @@ it("should calculate the total price correctly", async () => {
 
   // Check if items are added to the cart
   expect(screen.getByText(/Yaourt \(x1\)/i)).toBeInTheDocument();
-  expect(screen.getByText(/lben \(x1\)/i)).toBeInTheDocument();
+  expect(screen.getByText(/Camembert \(x1\)/i)).toBeInTheDocument();
 
   // Check if total price is calculated correctly
-  expect(screen.getByText(/Total: \$4.70/i)).toBeInTheDocument();
+  expect(screen.getByText(/Total: \$5.70/i)).toBeInTheDocument();
 });
 
   it("should display shop items after login", async () => {
