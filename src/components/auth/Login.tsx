@@ -3,7 +3,7 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button";
 
 interface LoginProps {
-  onLogin: () => void;
+  onLogin: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Login: React.FC<LoginProps> = ({ onLogin }) => (
@@ -13,7 +13,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => (
       <div className="text-lg text-gray-600 italic">Please log in to access the shop.</div>
     </CardContent>
     <CardFooter>
-      <Button onClick={onLogin} className="w-full">
+      <Button onClick={() => onLogin(true)} className="w-full">
         Login
       </Button>
     </CardFooter>
