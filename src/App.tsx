@@ -1,6 +1,6 @@
-import Login from "./components/auth/Login";
-import Shop from "./components/shop/Shop";
-import Cart from "./components/shop/Cart";
+import Login from "./components/auth/login";
+import Shop from "./components/shop/shop";
+import Cart from "./components/shop/cart";
 import useAuth from "./hooks/use-auth";
 import useShop from "./hooks/use-shop";
 import useCart from "./hooks/use-cart";
@@ -10,7 +10,7 @@ import useCart from "./hooks/use-cart";
 
 const App = () => {
   const { loggedIn, setLoggedIn } = useAuth();
-  const { items ,loading} = useShop();
+  const { items  ,loading , setSearchQuery} = useShop();
   const { cart, addToCart, removeFromCart, calculateTotal } = useCart();
 
   return (
@@ -21,7 +21,7 @@ const App = () => {
           <Login onLogin={setLoggedIn} />
         ) : (
           <>
-            <Shop items={items} addToCart={addToCart} loading={loading} />
+            <Shop items={items} addToCart={addToCart} loading={loading} setSearchQuery={setSearchQuery} />
             <Cart cart={cart} removeFromCart={removeFromCart} calculateTotal={calculateTotal} />
           </>
         )}

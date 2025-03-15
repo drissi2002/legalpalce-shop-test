@@ -1,26 +1,7 @@
 import { ItemType } from "@/types/item-type";
 import { CartItemType } from "@/types/cart-item-type";
+import { mockItemsData } from "./constants/mock-item-data";
 
-export const mockItemsData: ItemType[] = [
-  {
-    name: "Yaourt",
-    description: "natural yogurt",
-    sku: "yaourt-1",
-    price: "1.5",
-  },
-  {
-    name: "lben",
-    description: "fresh buttermilk",
-    sku: "lben-2",
-    price: "3.2",
-  },
-  {
-    name: "Cheese",
-    description: "Cheddar cheese",
-    sku: "cheese-3",
-    price: "4.5",
-  },
-];
 
 export const mockFetchData = (): Promise<{ itemsData: ItemType[] }> =>
   new Promise((resolve) =>
