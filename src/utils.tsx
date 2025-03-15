@@ -29,7 +29,7 @@ export const mockFetchData = (): Promise<{ itemsData: ItemType[] }> =>
         resolve({
           itemsData: mockItemsData,
         }),
-      1000
+      4000
     )
   );
 
