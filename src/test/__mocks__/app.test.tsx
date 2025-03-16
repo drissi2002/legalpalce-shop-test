@@ -48,7 +48,7 @@ describe("App Component", () => {
     fireEvent.click(screen.getByRole("button", { name: /login/i }));
 
     // Wait for items to be fetched and displayed
-    await waitFor(() => expect(screen.getByText("natural yogurt")).toBeInTheDocument(), { timeout: 2000 });
+    await waitFor(() => expect(screen.getByText("Fermented Products")).toBeInTheDocument(), { timeout: 2000 });
 
     // Add item to cart
     fireEvent.click(screen.getAllByRole("button", { name: /Add to cart/i })[0]);

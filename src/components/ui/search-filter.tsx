@@ -20,13 +20,13 @@ const SearchAndFilters: React.FC<SearchAndFiltersProps> = ({
   handleResetFilters,
 }) => {
   return (
-    <Card className="w-1/4 p-4">
+    <Card className="flex-1 p-4">
       <CardHeader className="text-md text-center italic text-gray-400">Search and Filters</CardHeader>
       <CardContent>
         <div className="flex flex-col gap-4">
-        <div>
+          <div>
             <label className="text-lg font-bold flex items-center gap-2">
-            <span className="text-xl">🔍</span>Search Item:
+              <span className="text-xl">🔍</span>Search Item:
             </label>
             <div className="flex items-center gap-2 mt-2">
               <input
@@ -57,7 +57,7 @@ const SearchAndFilters: React.FC<SearchAndFiltersProps> = ({
             </div>
           </div>
           <Button onClick={handleResetFilters} className="mt-4">
-             Reset Filters
+            Reset Filters
           </Button>
         </div>
       </CardContent>

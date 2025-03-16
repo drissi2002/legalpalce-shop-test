@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
-import { Bell, ShoppingCart } from "lucide-react";
+import { Bell} from "lucide-react";
 import { CartItemType } from "@/types/cart-item-type";
 
 interface CartProps {
@@ -15,9 +15,9 @@ const Cart: React.FC<CartProps> = ({ cart, removeFromCart, calculateTotal }) => 
   const itemCount = useMemo(() => cart.reduce((count, item) => count + item.quantity, 0), [cart]);
 
   return (
-    <div className="w-1/3 border-2 rounded-md p-8 bg-gray-100 flex flex-col gap-2 relative">
+    <div className="w-full md:w-1/3 border-2 rounded-md p-8 bg-gray-100 flex flex-col gap-2 relative">
       <h4 className="scroll-m-20 text-xl font-semibold tracking-tight flex flex-row gap-2 justify-center items-center">
-      <span className="text-xl">🛒</span> Cart
+        <span className="text-xl">🛒</span> Cart
       </h4>
       <div className="absolute top-4 right-4">
         <div className="relative">
