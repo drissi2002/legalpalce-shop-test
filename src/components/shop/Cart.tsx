@@ -35,7 +35,7 @@ const Cart: React.FC<CartProps> = ({ cart, removeFromCart, calculateTotal }) => 
         <div className="flex flex-col gap-2">
           {cart.map((item) => (
             <Card key={item.sku}>
-              <CardHeader className="text-lg font-bold">{item.name} (x{item.quantity})</CardHeader>
+              <CardHeader className="text-md font-bold">{item.name} (x{item.quantity})   {item.icon}</CardHeader>
               <CardContent className="text-sm text-gray-600 italic">{item.description}</CardContent>
               <CardFooter>
                 <Button onClick={() => removeFromCart(item.sku)} className="w-full">

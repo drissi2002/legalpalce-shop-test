@@ -50,8 +50,8 @@ const Shop: React.FC<ShopProps> = ({ items, addToCart, loading, setSearchQuery }
             <div className="flex flex-row gap-2 w-full">
             {filteredItems.map((item) => (
                   <Card key={item.sku} className="w-1/3">
-                    <CardHeader className="scroll-m-20 text-lg font-bold tracking-tight flex flex-row gap-2 justify-center items-center">
-                      <span className="text-md">{item.name}  {item.icon}</span>
+                    <CardHeader className="scroll-m-20 text-lg font-bold tracking-tight flex flex-row gap-2">
+                      <span className="text-md">{item.name}</span>
                     </CardHeader>
                     <CardContent className="text-sm flex justify-between items-center text-gray-600 italic">{item.description}</CardContent>
                     <CardFooter>

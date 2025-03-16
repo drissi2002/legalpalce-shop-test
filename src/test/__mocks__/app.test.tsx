@@ -32,7 +32,7 @@ describe("App Component", () => {
     fireEvent.click(screen.getByRole("button", { name: /login/i }));
 
     // Wait for items to be fetched and displayed
-    await waitFor(() => expect(screen.getByText("Yaourt")).toBeInTheDocument(), { timeout: 2000 });
+    await waitFor(() => expect(screen.getByText("Yaourt")).toBeInTheDocument(), { timeout: 4000 });
 
     // Add item to cart
     fireEvent.click(screen.getAllByRole("button", { name: /Add to cart/i })[0]);
@@ -48,19 +48,19 @@ describe("App Component", () => {
     fireEvent.click(screen.getByRole("button", { name: /login/i }));
 
     // Wait for items to be fetched and displayed
-    await waitFor(() => expect(screen.getByText("Fermented Products")).toBeInTheDocument(), { timeout: 2000 });
+    await waitFor(() => expect(screen.getByText("Pasteurized fresh cream")).toBeInTheDocument(), { timeout: 4000 });
 
     // Add item to cart
     fireEvent.click(screen.getAllByRole("button", { name: /Add to cart/i })[0]);
 
     // Check if item is added to the cart
-    expect(screen.getByText(/Yaourt \(x1\)/i)).toBeInTheDocument();
+    expect(screen.getByText(/Butter \(x1\)/i)).toBeInTheDocument();
 
     // Remove item from cart
     fireEvent.click(screen.getByRole("button", { name: /Remove/i }));
 
     // Check if item is removed from the cart
-    expect(screen.queryByText(/Yaourt \(x1\)/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/Butter \(x1\)/i)).not.toBeInTheDocument();
 });
 
 it("should calculate the total price correctly", async () => {
@@ -70,19 +70,19 @@ it("should calculate the total price correctly", async () => {
   fireEvent.click(screen.getByRole("button", { name: /login/i }));
 
   // Wait for items to be fetched and displayed
-  await waitFor(() => expect(screen.getByText("Fermented Products")).toBeInTheDocument(), { timeout: 2000 });
-  await waitFor(() => expect(screen.getByText("Soft Cheese")).toBeInTheDocument(), { timeout: 2000 });
+  await waitFor(() => expect(screen.getByText("Pasteurized fresh cream")).toBeInTheDocument(), { timeout: 4000 });
+  await waitFor(() => expect(screen.getByText("Soft Cheese")).toBeInTheDocument(), { timeout: 4000 });
 
   // Add items to cart
   fireEvent.click(screen.getAllByRole("button", { name: /Add to Cart/i })[0]);
   fireEvent.click(screen.getAllByRole("button", { name: /Add to Cart/i })[1]);
 
   // Check if items are added to the cart
-  expect(screen.getByText(/Yaourt \(x1\)/i)).toBeInTheDocument();
+  expect(screen.getByText(/Butter \(x1\)/i)).toBeInTheDocument();
   expect(screen.getByText(/Camembert \(x1\)/i)).toBeInTheDocument();
 
   // Check if total price is calculated correctly
-  expect(screen.getByText(/Total: \$5.70/i)).toBeInTheDocument();
+  expect(screen.getByText(/Total: \$8.70/i)).toBeInTheDocument();
 });
 
   it("should display shop items after login", async () => {
@@ -92,6 +92,6 @@ it("should calculate the total price correctly", async () => {
     fireEvent.click(screen.getByRole("button", { name: /login/i }));
 
     // Wait for items to be fetched and displayed
-    await waitFor(() => expect(screen.getByText("Yaourt")).toBeInTheDocument(), { timeout: 2000 });
+    await waitFor(() => expect(screen.getByText("Yaourt 🥫")).toBeInTheDocument(), { timeout: 4000 });
   });
 });

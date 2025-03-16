@@ -15,7 +15,7 @@ const App = () => {
 
   return (
     <div className="min-w-screen p-12 w-full h-screen gap-2 flex flex-col items-center justify-center">
-      <div className="text-lg text-gray-600 italic"> Shop Test ✍🏻 </div>
+      <div className="text-lg text-gray-600 italic"> Shop Test</div>
       <div className="flex flex-row space-x-2 w-full h-full ">
         {!loggedIn ? (
           <Login onLogin={setLoggedIn} />
