@@ -1,9 +1,10 @@
 import { createContext, useContext, ReactNode } from 'react';
 import useCart from '../hooks/use-cart';
+import { CartItemType } from '@/types/cart-item-type';
 
 // Define the shape of your context value
 interface CartContextValue {
-  cart: any; // Replace 'any' with your actual cart type
+  cart: CartItemType[]; // Replace 'any' with your actual cart type
   addToCart: (item: any) => void;
   removeFromCart: (itemId: string) => void;
   calculateTotal: () => number; // Explicitly type this as returning number
